@@ -14,13 +14,24 @@ int	main(int argc, char **argv)
 	while (index)
 	{
 		lstadd_back(&a_node, lstnew(ft_atoi(argv[argc - index])));
-		lstadd_back(&b_node, lstnew(ft_atoi(argv[argc - index] + 1)));
+		lstadd_back(&b_node, lstnew(ft_atoi(argv[argc - index])));
 		index--;
 	}
-	while (a_node)
+	//swap(a_node);
+	//swap_ab(a_node, b_node);
+	push(&a_node, &b_node);
+	a_tmp = a_node;
+	b_tmp = b_node;
+	while (a_tmp)
 	{
-		printf("%d\n", a_node->value);
-		a_node = a_node->next;
+		printf("%d ", a_tmp->value);
+		a_tmp = a_tmp->next;
+	}
+	printf("\n");
+	while (b_tmp)
+	{
+		printf("%d ", b_tmp->value);
+		b_tmp = b_tmp->next;
 	}
 	
 }

@@ -11,4 +11,6 @@
 void	swap(t_stack *lst);
 void	swap_ab(t_stack *first_lst, t_stack *second_lst);
 
+void	push(t_stack **destination, t_stack **source);
+
 #endif
