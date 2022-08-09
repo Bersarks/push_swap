@@ -1,17 +1,30 @@
 #include "../Lib/push_swap.h"
 
-void	rotate(t_stack **source)
+void	rotate_a(t_a_stack **source)
 {
-	t_stack	*temp;
+	t_a_stack	*temp;
 
 	lstadd_back(source, lstnew((*source)->value));
 	temp = *source;
 	*source = (*source)->next;
 	free(temp);
+	write(1, "ra\n", 3);
 }
 
-void	rotate_ab(t_stack **first_s, t_stack **second_s)
+void	rotate_b(t_b_stack **source)
 {
-	rotate(first_s);
-	rotate(second_s);
+	t_b_stack	*temp;
+
+	lstadd_back(source, lstnew((*source)->value));
+	temp = *source;
+	*source = (*source)->next;
+	free(temp);
+	write(1, "rb\n", 3);
+}
+
+void	rotate_ab(t_a_stack **a_stack, t_b_stack **b_stack)
+{
+	rotate_a(a_stack);
+	rotate_b(b_stack);
+	write(1, "rr\n", 3);
 }

@@ -17,11 +17,6 @@ int	main(int argc, char **argv)
 		lstadd_back(&b_node, lstnew(ft_atoi(argv[argc - index])));
 		index--;
 	}
-	//swap(a_node);
-	//swap_ab(a_node, b_node);
-	//push(&b_node, &a_node);
-	//rotate_ab(&a_node, &b_node);
-	reverse_rotate(&a_node);
 	a_tmp = a_node;
 	b_tmp = b_node;
 	while (a_tmp)
