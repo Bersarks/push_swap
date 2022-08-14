@@ -6,7 +6,7 @@ int	in_line(t_stack *source, int count)
 	int	temp_2;
 
 	temp = 1;
-	temp_2 = count - 1;
+	temp_2 = count;
 	while (count && source->next)
 	{
 		if (source->value < source->next->value)
@@ -19,26 +19,24 @@ int	in_line(t_stack *source, int count)
 	return (1);
 }
 
-int	duplicate_arguments(t_stack *source)
+int	duplicate_arguments(char **content)
 {
-	t_stack	*temp;
-	int		counter;
+	int	x;
+	int	y;
 
-	while (source)
+	y = 1;
+	while (content[y])
 	{
-		counter = 0;
-		temp = source->next;
-		while (temp)
+		x = y + 1;
+		while (content[x])
 		{
-			if (temp->value == source->value)
-				counter++;
-			temp = temp->next;
+			if (ft_strcmp(content[y], content[x]) == 0)
+				error_message("There are repeated arguments!\n");
+			else
+				x++;
 		}
-		if (counter >= 1)
-			error_message("There are repeated arguments!\n");
-		source = source->next;
+		y++;
 	}
-	free(temp);
 	return (1);
 }
 
@@ -55,7 +53,7 @@ int	content_control(char **content)
 		{
 			if (content[y][x] == ' ')
 				x++;
-			else if (!(content[y][x] >= '0' && content[y][x] <= '9'))
+			if (!(content[y][x] >= '0' && content[y][x] <= '9'))
 				error_message("There are foreign characters!\n");
 			x++;
 		}

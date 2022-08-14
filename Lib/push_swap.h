@@ -26,6 +26,6 @@ void	reverse_rotate_ab(t_a_stack **a_stack, t_b_stack **b_stack);
 void	error_message(const char *error_message);
 int		content_control(char **content);
 int		in_line(t_stack *source, int count);
-int		duplicate_arguments(t_stack *source);
+int		duplicate_arguments(char **content);
 
 #endif
