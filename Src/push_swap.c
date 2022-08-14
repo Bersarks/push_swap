@@ -2,10 +2,10 @@
 
 int	main(int argc, char **argv)
 {
-	int			x;
 	char		**content;
 	t_a_stack	*a_node;
 	t_b_stack	*b_node;
+	int			x;
 
 	a_node = NULL;
 	b_node = NULL;
