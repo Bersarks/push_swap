@@ -35,8 +35,31 @@ int	duplicate_arguments(t_stack *source)
 			temp = temp->next;
 		}
 		if (counter >= 1)
-			error_message("There are repeated arguments!");
+			error_message("There are repeated arguments!\n");
 		source = source->next;
+	}
+	free(temp);
+	return (1);
+}
+
+int	content_control(char **content)
+{
+	int	x;
+	int	y;
+
+	y = 1;
+	while(content[y])
+	{
+		x = 0;
+		while (content[y][x])
+		{
+			if (content[y][x] == ' ')
+				x++;
+			else if (!(content[y][x] >= '0' && content[y][x] <= '9'))
+				error_message("There are foreign characters!\n");
+			x++;
+		}
+		y++;
 	}
 	return (1);
 }
