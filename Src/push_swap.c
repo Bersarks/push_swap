@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 		a_node->count++;
 		index--;
 	}
-	if(content_control(argv) && in_line(a_node, argc) && duplicate_arguments(a_node))
+	if(content_control(argv) && duplicate_arguments(a_node) && in_line(a_node, argc))
 	{
 		while (a_node)
 		{
