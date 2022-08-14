@@ -15,19 +15,23 @@ int	main(int argc, char **argv)
 	{
 		lstadd_back(&a_node, lstnew(ft_atoi(argv[argc - index])));
 		lstadd_back(&b_node, lstnew(ft_atoi(argv[argc - index])));
+		a_node->count++;
 		index--;
 	}
-	a_tmp = a_node;
-	b_tmp = b_node;
-	while (a_tmp)
+	if(in_line(a_node, argc) && duplicate_arguments(a_node))
 	{
-		printf("%d ", a_tmp->value);
-		a_tmp = a_tmp->next;
-	}
-	printf("\n");
-	while (b_tmp)
-	{
-		printf("%d ", b_tmp->value);
-		b_tmp = b_tmp->next;
+		a_tmp = a_node;
+		b_tmp = b_node;
+		while (a_tmp)
+		{
+			printf("%d ", a_tmp->value);
+			a_tmp = a_tmp->next;
+		}
+		printf("\n");
+		while (b_tmp)
+		{
+			printf("%d ", b_tmp->value);
+			b_tmp = b_tmp->next;
+		}
 	}
 }
