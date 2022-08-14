@@ -27,5 +27,7 @@ void	error_message(const char *error_message);
 int		content_control(char **content);
 int		in_line(t_stack *source, int count);
 int		duplicate_arguments(char **content);
+void	control_processor(t_a_stack **a_sk, char **av, int arg_size);
+void	sort_trion(t_stack **content, int count);
 
 #endif

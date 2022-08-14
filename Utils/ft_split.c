@@ -1,5 +1,24 @@
 #include "../Lib/push_swap.h"
 
+void	check_split(char **content)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (content[y])
+	{
+		x = 0;
+		while (content[y][x])
+		{
+			if (!(content[y][x] >= '0' && content[y][x] <= '9'))
+				error_message("There are foreign characters!\n");
+			x++;
+		}
+		y++;
+	}
+}
+
 static int	count_word(const char *str, char c)
 {
 	int	i;

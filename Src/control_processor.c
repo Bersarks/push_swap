@@ -1,37 +1,52 @@
 #include "../Lib/push_swap.h"
 
-static void	add_data_to_structure(t_stack **source, char **content)
+static void	add_data_to_structure(t_stack **source, char **content, int split)
 {
 	int	y;
 
-	y = 1;
-	while (content[y])
+	if (split == 1)
 	{
-		lstadd_back(source, ft_atoi(content[y]));
-		(*source)->count++;
-		y++;
+		y = 0;
+		while (content[y])
+		{
+			lstadd_back(source, lstnew(ft_atoi(content[y])));
+			(*source)->count++;
+			y++;
+		}
 	}
+	else
+	{
+		y = 1;
+		while (content[y])
+		{
+			lstadd_back(source, lstnew(ft_atoi(content[y])));
+			(*source)->count++;
+			y++;
+		}
+	}
+
 }
 
-void	control_processor(t_a_stack **a_stack, t_b_stack **b_stack, char **argv, int count, int arg_size)
+void	control_processor(t_a_stack **a_sk, char **av, int arg_size)
 {
 	char	**content;
 
 	if (arg_size == 2)
 	{
-		content = ft_split(argv[1], ' ');
-		if(content_control(content) && duplicate_arguments(content))
+		content = ft_split(av[1], ' ');
+		check_split(content);
+		if (content_control(content) && duplicate_arguments(content))
 		{
-			add_data_to_structure(a_stack, content);
-			in_line((*a_stack), (*a_stack)->count);
+			add_data_to_structure(a_sk, content, 1);
+			in_line((*a_sk), (*a_sk)->count);
 		}
 	}
 	else if (arg_size > 2)
 	{
-		if(content_control(argv) && duplicate_arguments(argv))
+		if (content_control(av) && duplicate_arguments(av))
 		{
-			add_data_to_structure(a_stack, argv);
-			in_line((*a_stack), (*a_stack)->count);
+			add_data_to_structure(a_sk, av, 0);
+			in_line((*a_sk), (*a_sk)->count);
 		}
 	}
 	else

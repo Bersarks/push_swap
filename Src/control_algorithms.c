@@ -46,7 +46,7 @@ int	content_control(char **content)
 	int	y;
 
 	y = 1;
-	while(content[y])
+	while (content[y])
 	{
 		x = 0;
 		while (content[y][x])
