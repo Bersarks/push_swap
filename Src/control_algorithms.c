@@ -53,7 +53,9 @@ int	content_control(char **content)
 		{
 			if (content[y][x] == ' ')
 				x++;
-			if (!(content[y][x] >= '0' && content[y][x] <= '9'))
+			if (!((content[y][x] >= '0' && content[y][x] <= '9')
+				|| (content[y][x] == '-' && content[y][x + 1] >= '0'
+					&& content[y][x + 1] <= '9')))
 				error_message("There are foreign characters!\n");
 			x++;
 		}

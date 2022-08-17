@@ -24,7 +24,6 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 			y++;
 		}
 	}
-
 }
 
 void	control_processor(t_a_stack **a_sk, char **av, int arg_size)

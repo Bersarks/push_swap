@@ -11,7 +11,9 @@ void	check_split(char **content)
 		x = 0;
 		while (content[y][x])
 		{
-			if (!(content[y][x] >= '0' && content[y][x] <= '9'))
+			if (!((content[y][x] >= '0' && content[y][x] <= '9')
+				|| (content[y][x] == '-' && content[y][x + 1] >= '0'
+					&& content[y][x + 1] <= '9')))
 				error_message("There are foreign characters!\n");
 			x++;
 		}
