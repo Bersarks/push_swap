@@ -29,5 +29,7 @@ int		in_line(t_stack *source, int count);
 int		duplicate_arguments(char **content);
 void	control_processor(t_a_stack **a_sk, char **av, int arg_size);
 void	sort_trion(t_stack **content, int count);
+int		control(t_a_stack *a_stack, t_b_stack *b_stack, int count);
+void	sorting(t_a_stack **a_stack, t_b_stack **b_stack);
 
 #endif
