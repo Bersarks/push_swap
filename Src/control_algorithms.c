@@ -15,7 +15,8 @@ int	in_line(t_stack *source, int count)
 		count--;
 	}
 	if (temp == temp_2)
-		exit(EXIT_SUCCESS);
+		return (0);
+		//exit(EXIT_SUCCESS);
 	return (1);
 }
 

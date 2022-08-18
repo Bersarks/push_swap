@@ -20,43 +20,17 @@ void	sort_trion(t_a_stack **content, int count)
 	}
 }
 
-void	sorting(t_a_stack **a_stack, t_b_stack **b_stack)
+void	kvintett(t_a_stack **a_stack, t_b_stack **b_stack)
 {
-	int	size;
+	int	*arr;
 
-	size = lstsize((*a_stack));
-	while (size > 3 && in_line((*a_stack), size))
+	arr = array_creator((*a_stack));
+	while (*arr)
 	{
-		if (size > 3)
-		{
-			push_b(b_stack, a_stack);
-			size--;
-		}
-		if (size == 3)
-			sort_trion(a_stack, size);
+		printf("%d\n", *arr);
+		printf("%d ", (*a_stack)->index);
+		(*a_stack) = (*a_stack)->next;
+		arr++;
 	}
-	while ((*b_stack))
-	{
-		if (control((*a_stack), (*b_stack), size) == 1)
-		{
-			push_a(a_stack, b_stack);
-			rotate_a(a_stack);
-		}
-		else if (control((*a_stack), (*b_stack), size) == 2)
-			push_a(a_stack, b_stack);
-		else if (control((*a_stack), (*b_stack), size) == 3)
-		{
-			push_a(a_stack, b_stack);
-			swap_a(a_stack);
-		}
-		else if (control((*a_stack), (*b_stack), size) == 4)
-		{
-			reverse_rotate_a(a_stack);
-			reverse_rotate_a(a_stack);
-			push_a(a_stack, b_stack);
-			rotate_a(a_stack);
-			rotate_a(a_stack);
-			rotate_a(a_stack);
-		}
-	}
+	b_stack = NULL;
 }

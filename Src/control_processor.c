@@ -10,7 +10,7 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 		while (content[y])
 		{
 			lstadd_back(source, lstnew(ft_atoi(content[y])));
-			(*source)->count++;
+			(*source)->index++;
 			y++;
 		}
 	}
@@ -20,7 +20,7 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 		while (content[y])
 		{
 			lstadd_back(source, lstnew(ft_atoi(content[y])));
-			(*source)->count++;
+			(*source)->index++;
 			y++;
 		}
 	}
@@ -37,7 +37,7 @@ void	control_processor(t_a_stack **a_sk, char **av, int arg_size)
 		if (content_control(content) && duplicate_arguments(content))
 		{
 			add_data_to_structure(a_sk, content, 1);
-			in_line((*a_sk), (*a_sk)->count);
+			in_line((*a_sk), (*a_sk)->index);
 		}
 	}
 	else if (arg_size > 2)
@@ -45,7 +45,7 @@ void	control_processor(t_a_stack **a_sk, char **av, int arg_size)
 		if (content_control(av) && duplicate_arguments(av))
 		{
 			add_data_to_structure(a_sk, av, 0);
-			in_line((*a_sk), (*a_sk)->count);
+			in_line((*a_sk), (*a_sk)->index);
 		}
 	}
 	else
