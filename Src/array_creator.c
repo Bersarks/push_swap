@@ -2,8 +2,8 @@
 
 int	*array_creator(t_a_stack *a_stack)
 {
-	int	*arr;
-	int	index;
+	int		*arr;
+	int		index;
 
 	arr = calloc(sizeof(int), lstsize(a_stack));
 	index = 0;

@@ -20,17 +20,16 @@ void	sort_trion(t_a_stack **content, int count)
 	}
 }
 
-void	kvintett(t_a_stack **a_stack, t_b_stack **b_stack)
+void	kvintett(t_a_stack **a_stack)
 {
 	int	*arr;
 
-	arr = array_creator((*a_stack));
+	arr = array_creator(*a_stack);
 	while (*arr)
 	{
-		printf("%d\n", *arr);
-		printf("%d ", (*a_stack)->index);
+		printf("Array: %d\n", *arr);
+		printf("Index: %d\n", (*a_stack)->index);
 		(*a_stack) = (*a_stack)->next;
 		arr++;
 	}
-	b_stack = NULL;
 }

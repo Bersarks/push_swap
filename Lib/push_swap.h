@@ -29,7 +29,7 @@ int		in_line(t_stack *source, int count);
 int		duplicate_arguments(char **content);
 void	control_processor(t_a_stack **a_sk, char **av, int arg_size);
 void	sort_trion(t_stack **content, int count);
-void	kvintett(t_a_stack **a_stack, t_b_stack **b_stack);
+void	kvintett(t_a_stack **a_stack);
 int		*array_creator(t_a_stack *a_stack);
 
 #endif

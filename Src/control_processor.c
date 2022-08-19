@@ -1,5 +1,20 @@
 #include "../Lib/push_swap.h"
 
+static void	add_index_to_structure(t_stack **source)
+{
+	t_stack	*temp;
+	int		index;
+
+	temp = *source;
+	index = 1;
+	while (temp)
+	{
+		temp->index = index;
+		temp = temp->next;
+		index++;
+	}
+}
+
 static void	add_data_to_structure(t_stack **source, char **content, int split)
 {
 	int	y;
@@ -10,9 +25,9 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 		while (content[y])
 		{
 			lstadd_back(source, lstnew(ft_atoi(content[y])));
-			(*source)->index++;
 			y++;
 		}
+		add_index_to_structure(source);
 	}
 	else
 	{
@@ -20,9 +35,9 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 		while (content[y])
 		{
 			lstadd_back(source, lstnew(ft_atoi(content[y])));
-			(*source)->index++;
 			y++;
 		}
+		add_index_to_structure(source);
 	}
 }
 
