@@ -1,6 +1,6 @@
 NAME		= push_swap
 
-CC			= gcc
+CC			= gcc -g #-g LLDB Debug mode on
 CFLAGS		= -Wall -Wextra -Werror
 
 SRC			= $(wildcard ./Src/*.c)

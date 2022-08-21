@@ -25,9 +25,13 @@ void	kvintett(t_a_stack **a_stack)
 	int	*arr;
 
 	arr = array_creator(*a_stack);
+	//swap_a(a_stack);
+	//rotate_a(a_stack);
+	reverse_rotate_a(a_stack);
 	while (*arr)
 	{
-		printf("Array: %d\n", *arr);
+		printf("Array: %d ", *arr);
+		printf("Value: %d ", (*a_stack)->value);
 		printf("Index: %d\n", (*a_stack)->index);
 		(*a_stack) = (*a_stack)->next;
 		arr++;

@@ -2,21 +2,33 @@
 
 void	swap_a(t_a_stack **source)
 {
-	int	temp;
+	// int	temp;
 
-	temp = (*source)->value;
-	(*source)->value = (*source)->next->value;
-	(*source)->next->value = temp;
+	// temp = (*source)->value;
+	// (*source)->value = (*source)->next->value;
+	// (*source)->next->value = temp;
+	// write(1, "sa\n", 3);
+	t_a_stack	*temp;
+
+	if (!(*source))
+		return ;
+	temp = *source;
+	*source = (*source)->next;
+	temp->next = (*source)->next;
+	(*source)->next = temp;
 	write(1, "sa\n", 3);
 }
 
 void	swap_b(t_b_stack **source)
 {
-	int	temp;
+	t_b_stack	*temp;
 
-	temp = (*source)->value;
-	(*source)->value = (*source)->next->value;
-	(*source)->next->value = temp;
+	if (!(*source))
+		return ;
+	temp = *source;
+	*source = (*source)->next;
+	temp->next = (*source)->next;
+	(*source)->next = temp;
 	write(1, "sb\n", 3);
 }
 

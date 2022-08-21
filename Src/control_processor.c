@@ -6,7 +6,7 @@ static void	add_index_to_structure(t_stack **source)
 	int		index;
 
 	temp = *source;
-	index = 1;
+	index = 0;
 	while (temp)
 	{
 		temp->index = index;
