@@ -11,12 +11,7 @@ int	main(int ac, char **av)
 	if (lstsize(a_node) == 3)
 		sort_trion(&a_node, lstsize(a_node));
 	if (lstsize(a_node) <= 5)
-		kvintett(&a_node);
-	while (a_node)
-	{
-		printf("Value: %d ", a_node->value);
-		printf("Index: %d\n", a_node->index);
-		a_node = a_node->next;
-	}
+		kvintett(&a_node, &b_node);
+	//print_a_struct(a_node);
 	printf("\n");
 }
