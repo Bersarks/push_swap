@@ -22,7 +22,7 @@ void	reverse_rotate_b(t_b_stack **source)
 	t_stack	*temp;
 	t_stack	*prev;
 
-	lstadd_front(source, lstnew(lstlast((*source))->value), (*source)->index);
+	lstadd_front(source, lstnew(lstlast((*source))->value), lstlast((*source))->index);
 	temp = *source;
 	while (temp->next)
 	{
