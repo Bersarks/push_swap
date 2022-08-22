@@ -23,11 +23,10 @@ void	sort_trion(t_a_stack **content, int count)
 void	kvintett(t_a_stack **a_stack)
 {
 	int	*arr;
+	int	max;
 
 	arr = array_creator(*a_stack);
-	//swap_a(a_stack);
-	//rotate_a(a_stack);
-	reverse_rotate_a(a_stack);
+	max = array_max_val(arr);
 	while (*arr)
 	{
 		printf("Array: %d ", *arr);

@@ -31,5 +31,6 @@ void	control_processor(t_a_stack **a_sk, char **av, int arg_size);
 void	sort_trion(t_stack **content, int count);
 void	kvintett(t_a_stack **a_stack);
 int		*array_creator(t_a_stack *a_stack);
+int		array_max_val(int *arr);
 
 #endif

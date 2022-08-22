@@ -14,3 +14,28 @@ int	*array_creator(t_a_stack *a_stack)
 	}
 	return (arr);
 }
+
+int	array_max_val(int *arr)
+{
+	int	x;
+	int	y;
+	int	count;
+
+	y = 0;
+	count = 0;
+	while (arr[y])
+	{
+		x = 0;
+		count = 0;
+		while (arr[x])
+		{
+			if (arr[y] > arr[x])
+				count++;
+			x++;
+		}
+		if (count == 4)
+			return (y);
+		y++;
+	}
+	return (y);
+}
