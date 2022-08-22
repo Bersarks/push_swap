@@ -22,17 +22,36 @@ void	sort_trion(t_a_stack **content, int count)
 
 void	kvintett(t_a_stack **a_stack)
 {
-	int	*arr;
-	int	max;
+	int			max;
+	t_b_stack	*b_stack;
 
-	arr = array_creator(*a_stack);
-	max = array_max_val(arr);
-	while (*arr)
+	while (in_line((*a_stack), lstsize(*a_stack)))
 	{
-		printf("Array: %d ", *arr);
-		printf("Value: %d ", (*a_stack)->value);
-		printf("Index: %d\n", (*a_stack)->index);
-		(*a_stack) = (*a_stack)->next;
-		arr++;
+		max = array_max_val(array_creator(*a_stack));
+		printf("%d\n", max);
+		if (max > 2)
+		{
+			if (max == 3 && lstsize(*a_stack) == 5)
+			{
+				reverse_rotate_a(a_stack);
+				reverse_rotate_a(a_stack);
+				push_b(&b_stack, a_stack);
+				max--;
+			}
+			if (max == 4 || (max == 3 && lstsize(*a_stack) == 4))
+			{
+				reverse_rotate_a(a_stack);
+				push_b(&b_stack, a_stack);
+				max--;
+			}
+		}
+		if (lstsize(*a_stack) == 3)
+			sort_trion(a_stack, lstsize(*a_stack));
 	}
+	// 	while (b_stack)
+	// {
+	// 	printf("Value: %d ", b_stack->value);
+	// 	printf("Index: %d\n", b_stack->index);
+	// 	b_stack = b_stack->next;
+	// }
 }

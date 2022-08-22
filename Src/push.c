@@ -6,7 +6,7 @@ void	push_a(t_a_stack **destination, t_b_stack **source)
 
 	if (lstsize(*source) > 0)
 	{
-		lstadd_front(destination, lstnew((*source)->value));
+		lstadd_front(destination, lstnew((*source)->value), (*source)->index);
 		temp = *source;
 		*source = (*source)->next;
 		free(temp);
@@ -20,7 +20,7 @@ void	push_b(t_b_stack **destination, t_a_stack **source)
 
 	if (lstsize(*source) > 0)
 	{
-		lstadd_front(destination, lstnew((*source)->value));
+		lstadd_front(destination, lstnew((*source)->value), (*source)->index);
 		temp = *source;
 		*source = (*source)->next;
 		free(temp);
