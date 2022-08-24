@@ -15,27 +15,30 @@ int	*array_creator(t_a_stack *a_stack)
 	return (arr);
 }
 
-int	array_max_val(int *arr)
+int	array_min_index(int *arr, int size)
 {
 	int	x;
 	int	y;
 	int	count;
+	int count_2;
 
 	y = 0;
 	count = 0;
-	while (arr[y])
+	count_2 = size;
+	while (size)
 	{
 		x = 0;
 		count = 0;
-		while (arr[x])
+		while (x <= count_2)
 		{
-			if (arr[y] > arr[x])
+			if (arr[y] < arr[x])
 				count++;
 			x++;
 		}
-		if (count == 4)
+		if (count == x - 1)
 			return (y);
 		y++;
+		size--;
 	}
 	return (y);
 }
