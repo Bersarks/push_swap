@@ -46,6 +46,6 @@ void	kvintett(t_a_stack **a_stack, t_b_stack **b_stack)
 		if (lstsize(*a_stack) == 3)
 			sort_trion(a_stack, lstsize(*a_stack));
 	}
-	//print_a_struct(*a_stack);
-	//print_b_struct(*b_stack);
+	print_a_struct(*a_stack);
+	print_b_struct(*b_stack);
 }
