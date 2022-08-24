@@ -24,7 +24,7 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 		y = 0;
 		while (content[y])
 		{
-			lstadd_back(source, lstnew(ft_atoi(content[y])));
+			lstadd_back(source, lstnew(ft_atoi(content[y])), 0);
 			y++;
 		}
 		add_index_to_structure(source);
@@ -34,7 +34,7 @@ static void	add_data_to_structure(t_stack **source, char **content, int split)
 		y = 1;
 		while (content[y])
 		{
-			lstadd_back(source, lstnew(ft_atoi(content[y])));
+			lstadd_back(source, lstnew(ft_atoi(content[y])), 0);
 			y++;
 		}
 		add_index_to_structure(source);
