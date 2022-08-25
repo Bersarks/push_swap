@@ -33,7 +33,7 @@ void	control_processor(t_a_stack **a_sk, char **av, int arg_size);
 void	sort_trion(t_stack **content, int count);
 void	kvintett(t_a_stack **a_stack, t_b_stack **b_stack);
 int		*array_creator(t_a_stack *a_stack);
-int		array_min_index(int *arr, int size);
+int		array_min_val(int *arr, int size);
 
 // PRINT
 void	print_b_struct(t_b_stack *b_stack);
