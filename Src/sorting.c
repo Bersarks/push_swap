@@ -22,30 +22,26 @@ void	sort_trion(t_a_stack **content, int count)
 
 void	kvintett(t_a_stack **a_stack, t_b_stack **b_stack)
 {
-	int			max;
+	int	max;
 
 	while (in_line((*a_stack), lstsize(*a_stack)))
 	{
-		max = array_max_val(array_creator(*a_stack));
-		if (max > 2)
+		while (lstsize((*a_stack)) >= 4)
 		{
-			if (max == 3 && lstsize(*a_stack) == 5)
-			{
-				reverse_rotate_a(a_stack);
-				reverse_rotate_a(a_stack);
-				push_b(b_stack, a_stack);
-				max--;
-			}
-			if (max == 4 || (max == 3 && lstsize(*a_stack) == 4))
-			{
-				reverse_rotate_a(a_stack);
-				push_b(b_stack, a_stack);
-				max--;
-			}
+			max = array_min_val(array_creator(*a_stack), lstsize((*a_stack)) - 1);
+			if (max > 2)
+				over_tri(a_stack, b_stack, max);
+			else
+				lower_tri(a_stack, b_stack, max);
 		}
-		if (lstsize(*a_stack) == 3)
+		if (lstsize((*a_stack)) == 3)
+		{
 			sort_trion(a_stack, lstsize(*a_stack));
+			push_a(a_stack, b_stack);
+			push_a(a_stack, b_stack);
+			break ;
+		}
 	}
-	//print_a_struct(*a_stack);
+	print_a_struct(*a_stack);
 	//print_b_struct(*b_stack);
 }

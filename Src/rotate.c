@@ -4,7 +4,7 @@ void	rotate_a(t_a_stack **source)
 {
 	t_a_stack	*temp;
 
-	lstadd_back(source, lstnew((*source)->value));
+	lstadd_back(source, lstnew((*source)->value), (*source)->index);
 	temp = *source;
 	*source = (*source)->next;
 	free(temp);
@@ -15,7 +15,7 @@ void	rotate_b(t_b_stack **source)
 {
 	t_b_stack	*temp;
 
-	lstadd_back(source, lstnew((*source)->value));
+	lstadd_back(source, lstnew((*source)->value), (*source)->index);
 	temp = *source;
 	*source = (*source)->next;
 	free(temp);
