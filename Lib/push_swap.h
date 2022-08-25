@@ -22,6 +22,8 @@ void	rotate_ab(t_a_stack **a_stack, t_b_stack **b_stack);
 void	reverse_rotate_a(t_a_stack **source);
 void	reverse_rotate_b(t_b_stack **source);
 void	reverse_rotate_ab(t_a_stack **a_stack, t_b_stack **b_stack);
+void	over_tri(t_a_stack **a_stack, t_b_stack **b_stack, int max);
+void	lower_tri(t_a_stack **a_stack, t_b_stack **b_stack, int max);
 
 void	error_message(const char *error_message);
 int		content_control(char **content);
