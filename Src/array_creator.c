@@ -79,4 +79,3 @@ void	lower_tri(t_a_stack **a_stack, t_b_stack **b_stack, int max)
 		swap_a(a_stack);
 		push_b(b_stack, a_stack);
 	}
-}
