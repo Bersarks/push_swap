@@ -9,7 +9,7 @@ static void	swap(int *x, int *y)
 	*y = c;
 }
 
-static void	quicksort(int number[], int first, int last)
+static void	bubbleSort(int number[], int first, int last)
 {
 	int	i;
 	int	j;
@@ -35,7 +35,7 @@ t_stack	*index_sort(t_stack *a_stack)
 	t_stack	*tmp;
 
 	index = array_creator(a_stack);
-	quicksort(index, 0, lstsize(a_stack) - 1);
+	bubbleSort(index, 0, lstsize(a_stack) - 1);
 	tmp = a_stack;
 	while (tmp)
 	{
