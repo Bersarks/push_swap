@@ -1,21 +1,22 @@
 #include "../Lib/push_swap.h"
 
-int	in_line(t_stack *source, int count)
+int	in_line(t_stack *source, int count, int options)
 {
-	int	temp;
-	int	temp_2;
+	int	counter_0;
+	int	counter_1;
 
-	temp = 1;
-	temp_2 = count;
+	counter_0 = count;
+	counter_1 = 1;
 	while (count && source->next)
 	{
 		if (source->value < source->next->value)
-			temp++;
+			counter_1++;
 		source = source->next;
 		count--;
 	}
-	if (temp == temp_2)
-		//exit(EXIT_SUCCESS);
+	if (counter_1 == counter_0 && options == 0)
+		return (0);
+	if (counter_1 == 5 && options == 1)
 		return (0);
 	return (1);
 }

@@ -52,7 +52,8 @@ void	control_processor(t_a_stack **a_sk, char **av, int arg_size)
 		if (content_control(content) && duplicate_arguments(content))
 		{
 			add_data_to_structure(a_sk, content, 1);
-			in_line((*a_sk), (*a_sk)->index);
+			if (!in_line((*a_sk), lstsize(*a_sk), 0))
+				exit(EXIT_SUCCESS);
 		}
 	}
 	else if (arg_size > 2)
@@ -60,7 +61,8 @@ void	control_processor(t_a_stack **a_sk, char **av, int arg_size)
 		if (content_control(av) && duplicate_arguments(av))
 		{
 			add_data_to_structure(a_sk, av, 0);
-			in_line((*a_sk), (*a_sk)->index);
+			if (!in_line((*a_sk), lstsize(*a_sk), 0))
+				exit(EXIT_SUCCESS);
 		}
 	}
 	else

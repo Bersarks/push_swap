@@ -15,12 +15,12 @@ int	*array_creator(t_a_stack *a_stack)
 	return (arr);
 }
 
-int	array_min_val(int *arr, int size)
+int	array_min_index(int *arr, int size)
 {
-	int    x;
-    int y;
-    int count;
-    int count_2;
+	int	x;
+	int	y;
+	int	count;
+	int	count_2;
 
     y = 0;
     count = 0;
@@ -41,42 +41,4 @@ int	array_min_val(int *arr, int size)
         size--;
     }
     return (y);
-}
-
-void	over_tri(t_a_stack **a_stack, t_b_stack **b_stack, int max)
-{
-	if (max > 2)
-	{
-		if (max == 4 || (max == 3 && lstsize(*a_stack) == 4))
-		{
-			reverse_rotate_a(a_stack);
-			push_b(b_stack, a_stack);
-		}
-		else if (max == 3 && lstsize(*a_stack) == 5)
-		{
-			reverse_rotate_a(a_stack);
-			reverse_rotate_a(a_stack);
-			push_b(b_stack, a_stack);
-		}
-	}
-}
-
-void	lower_tri(t_a_stack **a_stack, t_b_stack **b_stack, int max)
-{
-	if (max < 2)
-	{
-		if (max == 0)
-			push_b(b_stack, a_stack);
-		if (max == 1)
-		{
-			swap_a(a_stack);
-			push_b(b_stack, a_stack);
-		}
-	}
-	if (max == 2)
-	{
-		rotate_a(a_stack);
-		swap_a(a_stack);
-		push_b(b_stack, a_stack);
-	}
 }

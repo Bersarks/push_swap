@@ -2,17 +2,15 @@
 
 int	lstsize(t_stack *lst)
 {
-	t_stack	*temp;
-	int	i;
+	int	count;
 
-	temp = lst;
-	i = 0;
-	if (!lst || !temp)
+	count = 0;
+	if (!lst)
 		return (0);
-	while (temp)
+	while (lst)
 	{
-		temp = temp->next;
-		i++;
+		lst = lst->next;
+		count++;
 	}
-	return (i);
+	return (count);
 }

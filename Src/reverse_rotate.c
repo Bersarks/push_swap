@@ -5,7 +5,8 @@ void	reverse_rotate_a(t_a_stack **source)
 	t_stack	*temp;
 	t_stack	*prev;
 
-	lstadd_front(source, lstnew(lstlast((*source))->value), lstlast((*source))->index);
+	lstadd_front(source, lstnew(lstlast((*source))->value),
+		lstlast((*source))->index);
 	temp = *source;
 	while (temp->next)
 	{
@@ -22,7 +23,8 @@ void	reverse_rotate_b(t_b_stack **source)
 	t_stack	*temp;
 	t_stack	*prev;
 
-	lstadd_front(source, lstnew(lstlast((*source))->value), lstlast((*source))->index);
+	lstadd_front(source, lstnew(lstlast((*source))->value),
+		lstlast((*source))->index);
 	temp = *source;
 	while (temp->next)
 	{
